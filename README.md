@@ -27,6 +27,9 @@ mkdir "nome pasta" para criar a pasta
 ls .env - lista os conteúdos da pasta
 deactivate - desativa o ambiente virtual
 
+** se aparecer o erro de execução de scripts desabilitada, colar "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser" no terminal e tentar novamente
+
+.env\Scripts\activate
 
 #Pipenv
 Ferramenta de gerenciamento de pacotes que combina a dependência com a criação de ambiente virtual, um upgrade do PIP
@@ -102,3 +105,35 @@ from mypkg.sibling import example
 
 pip install isort
 isort meu_script.py
+
+------------------------------------------------
+
+instalação do zero do Django e poetry
+
+pip install poetry -U  - instalando o poetry
+
+poetry init - inicializando o poetry
+
+poetry install 'django=*' - instalando a versão mais nova do django (cria o ambiente virtual)
+
+poetry add 'django=*'  - instalando o django de fato
+
+poetry env info -- copiar o path do Virtualenv e colocar no interpretador do vscode (CTRL + SHIFT + P)
+- Selecionar interpretador - localizar e colar o caminho
+
+python -m venv .env - criando o env de fato
+
+
+.\manage.py runserver - para rodar e testar o manage
+
+para criar em si o app
+
+
+
+manage.py startapp polls
+
+>python manage.py makemigrations - criar o migration (dizemos para o django que fizemos mudanças e que essas modificações devem ser armazenadas como uma migração)
+
+manage.py migrate - migrar de fato
+
+
