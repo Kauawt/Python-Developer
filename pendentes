@@ -1,7 +1,0 @@
-pendências instalação poetry
-
-poetry add 'Flask=*'
-poetry add 'Flask-SQLAlchemy=*'
-poetry add 'Flask-Migrate=*'
-poetry add 'Flask-jwt-extended=*
-
