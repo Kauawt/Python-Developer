@@ -1,0 +1,15 @@
+{
+  "name": "frontend_bank",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

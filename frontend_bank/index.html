@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-8 text-indigo-600">Banco Online</h1>
+
+        <!-- Seção de Login -->
+        <div id="login-section" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Login</h2>
+            <form id="login-form">
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Usuário</label>
+                    <input type="text" id="username" name="username"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        required>
+                </div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Entrar</button>
+            </form>
+        </div>
+
+        <!-- Seção Home-->
+        <div id="main-section" class="hidden max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Seção da Conta -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Sua Conta</h2>
+                    <div id="account-info">
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-4">Criar Nova Transação</h3>
+                    <form id="transaction-form">
+                        <div class="mb-4">
+                            <label for="tx-type" class="block text-sm font-medium text-gray-700">Tipo</label>
+                            <select id="tx-type" name="tx-type"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value="deposit">Depósito</option>
+                                <option value="withdrawal">Saque</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="tx-amount" class="block text-sm font-medium text-gray-700">Valor</label>
+                            <input type="number" id="tx-amount" name="tx-amount" step="0.01" min="0.01"
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                required>
+                        </div>
+                        <button type="submit"
+                            class="w-2/3 mx-auto block bg-green-600 text-white py-1.5 px-3 rounded-md hover:bg-green-700 text-base">Realizar
+                            Transação</button>
+                    </form>
+                </div>
+
+                <!-- Seção do Extrato -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Extrato</h2>
+                    <div id="statement-list" class="space-y-4">
+                    </div>
+                </div>
+            </div>
+            <button id="logout-button"
+                class="mt-8 w-1/3 mx-auto block bg-indigo-600 text-white py-1.5 px-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Sair
+            </button>
+        </div>
+        <div id="create-account-section" class="max-w-md mx-auto mt-8">
+            <p class="text-center">Não tem uma conta?</p>
+            <button id="show-create-account-btn" class="text-center w-full text-indigo-600 hover:underline">Crie uma
+                agora</button>
+
+            <form id="create-account-form" class="hidden bg-white p-6 rounded-lg shadow-md mt-4">
+                <h2 class="text-2xl font-bold mb-4">Criar Nova Conta</h2>
+                <div class="mb-4">
+                    <label for="new-username" class="block text-sm font-medium text-gray-700">Nome de Usuário</label>
+                    <input type="text" id="new-username" name="new-username"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="new-password" class="block text-sm font-medium text-gray-700">Senha</label>
+                    <input type="password" id="new-password" name="new-password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Criar
+                    Conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
