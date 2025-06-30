@@ -1,0 +1,10 @@
+# Ignore the virtual environment directory
+
+.venv/
+.env
+
+node_modules/
+__pycache__/
+
+.vscode/
+.idea/
