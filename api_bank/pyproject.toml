@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "api_bank"
+version = "0.1.0"
+description = "API bancária com FastAPI"
+authors = ["Kaua <kauawt2@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "src" }]
+# Isso garante que o projeto pode ser instalado como pacote (evita erros de 'no folder found')
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "*"
+uvicorn = { extras = ["standard"], version = "*" }
+databases = { version = "*", extras = ["aiosqlite"] }  # Só usa SQLite no dev
+pydantic-settings = "*"  # Para config via .env
+pyjwt = "*"              # Para JWT
+passlib = "^1.7.4"       # Para hashear/verificar senha
+bcrypt = "<4.0.0"        # Backend necessário para passlib com bcrypt
+
+[tool.ruff]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
